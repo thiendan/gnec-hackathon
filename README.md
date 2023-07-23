@@ -1,1 +1,1 @@
-# gnec-hackathon
+# GNEC Hackathon
