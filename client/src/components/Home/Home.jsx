@@ -3,7 +3,6 @@ import "./Home.scss";
 import BannerImg from "../../assets/banner-img.png";
 import ChefLogo from "../../assets/chef_logo.png";
 
-import { GiCook } from "react-icons/gi";
 import { FaArrowRight } from "react-icons/fa";
 
 const Home = () => {
