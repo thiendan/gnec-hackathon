@@ -1,0 +1,103 @@
+@import "../../css-config/mixins.scss";
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
+
+.hero-banner {
+    position: relative;
+    background-color: white;
+    overflow: hidden;
+    @include md {
+        height: 100vh;
+    }
+    .content {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        // margin: 0 auto;
+        @include md {
+            flex-direction: row;
+            max-width: 1200px;
+        }
+
+        .banner-img {
+            position: relative;
+            justify-content: flex-end;
+            z-index: 9;
+            padding: 0;
+            margin: 0;
+            opacity: 0.4;
+            width: 100%;
+        }
+
+        .text-content {
+            margin: 0 auto;
+            justify-content: center;
+            padding-right: 15%;
+            padding-left: 15%;
+            font-family: 'Open Sans', sans-serif;
+            .icon {
+                width: 150px;
+                height: 100%;
+                padding: 0;
+                margin: 0;
+            }
+            .title-content {
+                padding-top: 30vh;
+                display: flex;
+                line-height: 1;
+                h1 {
+                    font-size: 80px;
+                    color: #112d4e;
+                }
+            }
+            .small-content {
+                padding-top: 0;
+                padding-bottom: 0;
+                margin: 0;
+                font-weight: 500;
+                line-height: 1;
+                color: black;
+                .main-text {
+                    font-size: 20px;
+                }
+                .sub-text {
+                    font-size: 10px;
+                }
+            }
+
+            .ctas {
+                display: flex;
+                justify-content: center;
+                .banner-cta {
+                    font-weight: 1000;
+                    margin-top: 30px;
+                    padding: 10px 15px;
+                    cursor: pointer;
+                    &.v1 {
+                        font-size: 15px;
+                        font-weight: bold;
+                        border: 6px solid transparent;
+                        background: black;
+                        color: white;
+                        box-shadow: 8px 6px 8px 3px #5c8cc4;
+                        margin-right: 40px;
+                        &:hover {
+                            box-shadow:0 0 0 0 white;
+                        }
+                    }
+                    &.v3{
+                        padding-left: 0;
+                        margin-left: 0;
+                    }
+                    &.v2{
+                        padding-right: 5px;
+                        margin-right: 0;
+                        &:hover {
+                            margin-right: 20px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
