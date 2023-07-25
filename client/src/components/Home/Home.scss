@@ -1,100 +1,116 @@
 @import "../../css-config/mixins.scss";
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
 
-
 .hero-banner {
     position: relative;
-    background-color: white;
+    background-repeat: no-repeat;
+    background-size: cover;
     overflow: hidden;
+    background-image: url("../../assets/bkgrd1.jpeg");
     @include md {
-        height: 100vh;
-    }
+        height: calc(100vh - 81px); 
+    }   
     .content {
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        // margin: 0 auto;
-        @include md {
-            flex-direction: row;
-            max-width: 1200px;
-        }
-
-        .banner-img {
-            position: relative;
-            justify-content: flex-end;
-            z-index: 9;
-            padding: 0;
-            margin: 0;
-            opacity: 0.4;
-            width: 100%;
-        }
-
+        padding-top: 100px;
+        padding-left: 200px;
         .text-content {
-            margin: 0 auto;
-            justify-content: center;
-            padding-right: 15%;
-            padding-left: 15%;
-            font-family: 'Open Sans', sans-serif;
-            .icon {
-                width: 150px;
-                height: 100%;
-                padding: 0;
-                margin: 0;
-            }
-            .title-content {
-                padding-top: 30vh;
+            background-color: white;
+            width: 500px;
+            height: 500px;
+            .header-content {
                 display: flex;
-                line-height: 1;
-                h1 {
-                    font-size: 80px;
-                    color: #112d4e;
+                justify-content: space-between;
+                align-items: center;
+                height: 50px;
+                background-color: #fbfbfb;
+                border-bottom: 1px solid #f3f3f3;
+                @include md {
+                    height: 120px;
                 }
-            }
-            .small-content {
-                padding-top: 0;
-                padding-bottom: 0;
-                margin: 0;
-                font-weight: 500;
-                line-height: 1;
-                color: black;
-                .main-text {
-                    font-size: 20px;
-                }
-                .sub-text {
-                    font-size: 10px;
-                }
-            }
+                .menu-items {
+                    list-style-type: none;
+                    display: none;
+                    padding-left: 50px;
+                    gap: 120px;
+                    @include md {
+                        display: flex;
+                    }
+                    .menu {
+                        flex-direction: column;
+                        justify-content: center;
+                        text-align: center;
 
-            .ctas {
-                display: flex;
-                justify-content: center;
-                .banner-cta {
-                    font-weight: 1000;
-                    margin-top: 30px;
-                    padding: 10px 15px;
-                    cursor: pointer;
+                        font-size: 16px;
+                        font-weight: 600;
+                        text-transform: uppercase;
+                        cursor: pointer;
+                        .icon {
+                            font-size: 25px;
+                        }
+                        &:hover {
+                            color: #797979;
+                        }
+                        &:active{
+                            border-bottom: 2px solid black;
+                        }
+                    }
+                    .menu-click {
+                        flex-direction: column;
+                        justify-content: center;
+                        text-align: center;
+
+                        font-size: 16px;
+                        font-weight: 600;
+                        text-transform: uppercase;
+                        border-bottom: 2px solid black;
+                        cursor: pointer;
+                        .icon {
+                            font-size: 25px;
+                        }
+                        &:hover {
+                            color: #797979;
+                        }
+                    }
+                    
+                }
+            }
+            .main-content {
+                padding: 15px;
+                .header {
+                    font-size: 23px;
+                }
+                .body {
+                    font-size: 18px;
+                    padding-bottom: 30px;
+                    color: #797979;
+                }
+                .cta {
+                    font-size: 18px;
+                    padding: 15px;
+                    width: fit-content;
                     &.v1 {
-                        font-size: 15px;
-                        font-weight: bold;
-                        border: 6px solid transparent;
-                        background: black;
+                        background-color: black;
                         color: white;
-                        box-shadow: 8px 6px 8px 3px #5c8cc4;
-                        margin-right: 40px;
-                        &:hover {
-                            box-shadow:0 0 0 0 white;
-                        }
+                        border-radius: 25px;
+                        box-shadow: 8px 6px 8px 3px #137DC5;
                     }
-                    &.v3{
+                    &.v1:hover {
+                        cursor: pointer;
+                        box-shadow: 6px 4px 6px 3px #71b1dc;
+                    }
+                    &.v2 {
                         padding-left: 0;
-                        margin-left: 0;
+                        padding-right: 0;
+                        padding-bottom: 5px;
+                        width: fit-content;
+                        padding-top: 30px;
+                        color: #919191;
+                        border-bottom: 1px solid #919191;
                     }
-                    &.v2{
-                        padding-right: 5px;
-                        margin-right: 0;
-                        &:hover {
-                            margin-right: 20px;
-                        }
+                    &.v2:hover {
+                        cursor: pointer;
+                        color: #484848;
+                        border-bottom: 1px solid black;
                     }
                 }
             }
