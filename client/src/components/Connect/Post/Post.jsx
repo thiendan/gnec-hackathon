@@ -19,8 +19,8 @@ const Post = ({posts}) => {
                     <div className="title">
                         <span className="name">{item.attributes.title}</span>
                         <span className="loc">{item.attributes.location}</span>
-                        </div>
-                        <span className="desc">{item.attributes.desc}</span>
+                    </div>
+                    <span className="desc">{item.attributes.desc}</span>
                 </div>
                 
             </div>

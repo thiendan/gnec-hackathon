@@ -1,1 +1,161 @@
 @import "../../css-config/mixins.scss";
+
+.post-container {
+    padding: 40px 50px;
+    .content {
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            text-transform: uppercase;
+            .title {
+                font-size: 18px;
+                color: #137DC5;
+            }
+            .back {
+                display: flex;
+                font-size: 20px;
+                font-weight: 600;
+                cursor: pointer;
+            }
+        }
+
+        .img-section {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            
+            .img1 {
+                img {
+                    width: 500px;
+                }
+            }
+            .img2 {
+                padding-top: 200px;
+                cursor: pointer;
+                img {
+                    opacity: 0.6;
+                    width: 100px;
+                }
+            }
+            .img3 {
+                padding-top: 200px;
+                cursor: pointer;
+                img {
+                    opacity: 0.6;
+                    width: 100px;
+                }
+            }
+        }
+
+        .body-content {
+            display: flex;
+            padding-top: 50px;
+            .desc {
+                flex-direction: column;
+                .location {
+                    padding-bottom: 20px;
+                    .loc-title {
+                        text-transform: uppercase;
+                        font-size: 18px;
+                        font-weight: 800;
+                        color: #0f5f96;
+                        padding-right: 20px;
+                    }
+                    .loc {
+                        font-size: 18px;
+                    }
+                }
+                .description {
+                    flex-direction: column;
+                    .title {
+                        text-transform: uppercase;
+                        font-size: 18px;
+                        font-weight: 800;
+                        color: #0f5f96;
+                        padding-bottom: 10px;
+                    }
+                    .body {
+                        font-size: 18px;
+                    }
+                }
+            }
+            .side {
+                padding-left: 20px;
+                width: 800px;
+                .about-me {
+                    border: 1px solid #0f5f96;
+                    border-radius: 20px;
+                    padding: 20px;
+                    background: rgba(15,95,150, 0.2);
+                    .header-about {
+                        display: flex;
+                        justify-content: none;
+                        .image {
+                            width: 100px;
+                            img {
+                                width: 100px;
+                                border-radius: 200px;
+                            }
+                        }   
+                        .name-about {
+                            font-size: 20px;
+                            padding-top: 30px;
+                            padding-left: 20px;
+                        }
+                    }
+                    .number {
+                        padding-top: 20px;
+                        font-size: 20px;
+                        font-weight: 500;
+                    }
+                }
+                .experience {
+                    padding: 20px 0;
+                    .exp-content {
+                        border: 1px solid #0f5f96;
+                        border-radius: 20px;
+                        padding: 20px;
+                        background: rgba(15,95,150, 0.2);
+                        .title {
+                            text-transform: uppercase;
+                            font-size: 18px;
+                            font-weight: 800;
+                            color: #0f5f96;
+                            padding-bottom: 20px;
+                        }
+                        .content {
+                            font-size: 20px;
+                            padding-top: 10px;
+                            .num{
+                                padding-right: 5px;
+                                font-weight: 500;
+                            }
+                        }
+                    }
+                }
+                .certified {
+                    border-radius: 20px;
+                    padding: 20px;
+                    .icon {
+                        font-size: 20px;
+                        padding-right: 10px;
+                    }
+                    .title {
+                        font-size: 20px;
+                        font-weight: 500;
+                    }
+                    &.green {
+                        border: 1px solid #99CC99;
+                        background: rgba(153,204,153, 0.2);
+                    }
+                    &.red {
+                        border: 1px solid #FF9999;
+                        background: rgba(255,153,153, 0.2);
+                    }
+                }
+                
+            }
+        }
+    }
+}

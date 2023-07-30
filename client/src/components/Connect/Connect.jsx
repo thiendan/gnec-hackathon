@@ -11,7 +11,7 @@ import { HiMiniMagnifyingGlass } from "react-icons/hi2";
 
 const Connect = () => {
     const [posts, setPosts] = useState();
-    const [products, setProducts] = useState();
+    
     // const [query, setQuery] = useState("");
     // // const navigate = useNavigate();
 

@@ -1,1 +1,11 @@
 @import "../../css-config/mixins.scss";
+
+.container {
+    .content {
+        .header {
+            width: 100%;
+            height: 200px;
+            background: url("../../assets/bkgrd-createPost.png");
+        }
+    }
+}

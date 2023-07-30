@@ -8,12 +8,33 @@
     padding: 20px;
     cursor: pointer;
     margin: 20px 0;
+    overflow: hidden;
     .post-content {
         gap: 50px;
         display: flex;
         .img-container {
             img {
                 width: 110px;
+            }
+        }
+        .details {
+            .title {
+                display: flex;
+                justify-content: space-between;
+                text-transform: uppercase;
+                font-weight: bolder;
+                padding-bottom: 20px;
+                .name {
+                    font-size: 20px;
+                    color: #0f5f96;
+                }
+                .loc {
+                    font-size: 15px;
+                    color: #0f5f96;
+                }
+            }
+            .desc {
+                font-size: 15px;
             }
         }
     }
