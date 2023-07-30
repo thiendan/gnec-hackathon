@@ -1,0 +1,20 @@
+@import "../../../css-config/mixins.scss";
+
+.posts {
+    border: 1px solid #d9d9d9;
+    width: 1100px;
+    height: 150px;
+    border-radius: 20px;
+    padding: 20px;
+    cursor: pointer;
+    margin: 20px 0;
+    .post-content {
+        gap: 50px;
+        display: flex;
+        .img-container {
+            img {
+                width: 110px;
+            }
+        }
+    }
+}

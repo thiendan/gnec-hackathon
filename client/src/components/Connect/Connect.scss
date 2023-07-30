@@ -35,6 +35,46 @@
         .filter {
             width: 250px;
             border-right: 1px solid #f2f2f2;
+            .filter-content {
+                text-transform: uppercase;
+                font-weight: 600;
+                flex-direction: column;
+                .subsection {
+                    padding: 10px 0;
+                    .trade-select {
+                        padding-right:10px;
+                        font-size: 10px;
+                        height: 40px;
+                        width: 220px;
+                    }
+                    .input-loc {
+                        border: 1px solid #d9d9d9;
+                        height: 30px;
+                        width: 200px;
+                        padding: 10px 10px 0 10px;
+                        border-radius: 20px;
+                        input {
+                            font-size: 15px;
+                            outline: none;
+                            border: none;
+                        }
+                    }
+                    
+                }
+            }
+        }
+    }
+
+    .search-results {
+        padding: 10px 50px;
+        .results {
+            // border: 1px solid #d9d9d9;
+            // width: 1100px;
+            // height: 150px;
+            // border-radius: 20px;
+            // padding: 20px;
+            // cursor: pointer;
+            // margin: 20px 0;
         }
     }
 

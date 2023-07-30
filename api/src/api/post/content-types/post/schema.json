@@ -27,17 +27,6 @@
     "name": {
       "type": "string"
     },
-    "photo": {
-      "type": "media",
-      "multiple": true,
-      "required": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
-    },
     "avatar": {
       "type": "media",
       "multiple": false,
@@ -49,17 +38,22 @@
         "audios"
       ]
     },
-    "categories": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::category.category",
-      "inversedBy": "posts"
-    },
     "certified": {
       "type": "boolean"
     },
     "phoneNumber": {
       "type": "string"
+    },
+    "image": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
     }
   }
 }

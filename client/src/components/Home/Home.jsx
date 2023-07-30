@@ -1,7 +1,6 @@
 import { useEffect, useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Home.scss";
-import background1 from "../../assets/bkgrd1.jpeg";
 
 import { BsPersonFillGear, BsFillPhoneFill } from "react-icons/bs";
 
@@ -60,7 +59,7 @@ const Home = () => {
                             Offer your skill set to the community.
                         </div>
                         <div className="cta v1" onClick={()=> navigate("/Register")}>Join the Community</div>
-                        <div className="cta v2">Learn more about Need a Hand</div>
+                        <div className="cta v2" onClick={()=> navigate("/About")}>Learn more about Need a Hand</div>
                     </div>}
 
                     {showConnect && <div className="main-content">
@@ -71,7 +70,7 @@ const Home = () => {
                             Help boost the economy within your community 
                         </div>
                         <div className="cta v1" onClick={()=> navigate("/Connect")}>Search the Network</div>
-                        <div className="cta v2">Learn more about Need a Hand</div>
+                        <div className="cta v2" onClick={()=> navigate("/About")}>Learn more about Need a Hand</div>
                     </div>}
 
                 </div>
