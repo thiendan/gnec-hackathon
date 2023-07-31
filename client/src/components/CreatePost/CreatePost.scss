@@ -20,7 +20,136 @@
                 font-size: 20px;
             }
             .form {
-                
+                padding: 40px 0;
+                input {
+                    outline: none;
+                    border: none;
+                    font-size: 20px;
+                }
+                span {
+                    font-size: 20px;
+                    font-weight: 600;
+                    padding-bottom: 10px;
+                    color: #0f5f96;
+                }
+                .personal-info {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    padding-bottom: 30px;
+                    .section {
+                        display: flex;
+                        flex-direction: column;
+                        border-bottom: 2px solid #f4f4f4;
+                        &:hover {
+                            border-bottom: 2px solid #D8D8D8;
+                        }
+                    }
+                    
+                }
+                .desc {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    padding-bottom: 30px;
+                    .section {
+                        display: flex;
+                        flex-direction: column;
+                        border-bottom: 2px solid #f4f4f4;
+                        &:hover {
+                            border-bottom: 2px solid #D8D8D8;
+                        }
+                        &.description {
+                            width: 810px;
+                        }
+                    }
+                }
+                .misc {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    padding-bottom: 30px;
+                    .section {
+                        display: flex;
+                        flex-direction: column;
+                        border-bottom: 2px solid #f4f4f4;
+                        &:hover {
+                            border-bottom: 2px solid #D8D8D8;
+                        }
+                    }
+                    .section-cert {
+                        display: flex;
+                        flex-direction: column;
+                        width: 810px;
+                        .btns {
+                            display: flex;
+                            flex-direction: row;
+                            // justify-content: space-between;
+                            .btn {
+                                padding: 5px 30px;
+                                margin-right: 10px;
+                                border-radius: 20px;
+                                cursor: pointer;
+                                &.yes {
+                                    border: 1px solid #99CC99;
+                                    background: rgba(153,204,153, 0.2);
+                                    &:hover {
+                                        background: #C1E0C1;
+                                    }
+                                }
+                                &.yesClicked {
+                                    border: 1px solid #99CC99;
+                                    background: #C1E0C1;
+                                }
+                                &.no {
+                                    border: 1px solid #FF9999;
+                                    background: rgba(255,153,153, 0.2);
+                                    &:hover {
+                                        background: #FFC1C1;
+                                    }
+                                }
+                                &.noClicked {
+                                    border: 1px solid #FF9999;
+                                    background: #FFC1C1;
+                                }
+                                span {
+                                    color: black;
+                                    font-size: 18px;
+                                    font-weight: 400;
+                                }
+                            }
+                        }
+                    }
+                }
+                .images {
+                    .avatar {
+                        padding-bottom: 20px;
+                        .avatars {
+                            display: flex;
+                            justify-content: space-between;
+                            .selected {
+                                border: 5px solid #99CC99;
+                            }
+                            img {
+                                width: 180px;
+                                cursor: pointer;
+                            }
+                        }
+                    }
+                }
+            }
+            .btn-submit {
+                font-size: 18px;
+                padding: 15px 25px;
+                width: fit-content;
+                background-color: black;
+                color: white;
+                border-radius: 25px;
+                box-shadow: 8px 6px 8px 3px #137DC5;
+                &:hover {
+                    cursor: pointer;
+                    box-shadow: 6px 4px 6px 3px #71b1dc;
+                }
             }
         }
     }
