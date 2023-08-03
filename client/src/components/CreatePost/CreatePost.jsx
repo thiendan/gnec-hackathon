@@ -1,4 +1,10 @@
 import { useState } from "react";
+import {useNavigate} from "react-router-dom";
+import axios from 'axios';
+import ReactModal from "react-modal";
+import Popup from 'reactjs-popup';
+
+import { AiFillCheckCircle } from "react-icons/ai";
 
 import "./CreatePost.scss";
 
@@ -13,6 +19,7 @@ import av9 from "../../assets/avatar/av12.jpg";
 const CreatePost = () => {
     const [isTrue, setIsTrue] = useState(false);
     const [isFalse, setIsFalse] = useState(false);
+    const [state, setState] = useState(null);
 
     const [avatar1, setAvatar1] = useState(false);
     const [avatar2, setAvatar2] = useState(false);
@@ -21,6 +28,60 @@ const CreatePost = () => {
     const [avatar5, setAvatar5] = useState(false);
     const [avatar6, setAvatar6] = useState(false);
     const [avatar7, setAvatar7] = useState(false);
+
+    const navigate = useNavigate();
+
+    const onFileChange = event => {
+        setState({ selectedFile: event.target.files[0] });
+    }
+
+    const onFileUpload = () => {
+ 
+        // Create an object of formData
+        const formData = new FormData();
+ 
+        // Update the formData object
+        formData.append(
+            "myFile",
+            this.state.selectedFile,
+            this.state.selectedFile.name
+        );
+ 
+        // Details of the uploaded file
+        console.log(this.state.selectedFile);
+ 
+        // Request made to the backend api
+        // Send formData object
+        axios.post("api/uploadfile", formData);
+    };
+
+    const fileData = () => {
+ 
+        if (this.state.selectedFile) {
+ 
+            return (
+                <div>
+                    <h2>File Details:</h2>
+                    <p>File Name: {this.state.selectedFile.name}</p>
+ 
+                    <p>File Type: {this.state.selectedFile.type}</p>
+ 
+                    <p>
+                        Last Modified:{" "}
+                        {this.state.selectedFile.lastModifiedDate.toDateString()}
+                    </p>
+ 
+                </div>
+            );
+        } else {
+            return (
+                <div>
+                    <br />
+                    <h4>Choose before Pressing the Upload button</h4>
+                </div>
+            );
+        }
+    };
 
     return (
        <div className="container">
@@ -190,12 +251,47 @@ const CreatePost = () => {
                             </div>
                             <div className="work-img">
                                 <span>Import images of your previous work</span>
+                                <div className="uploads">
+                                    <div className="upload">
+                                        <input type="file" onChange={onFileChange}/>
+                                        {/* <div onClick={onFileUpload} className="btn">Upload</div> */}
+                                    </div>
+                                    <div className="upload">
+                                        <input type="file" onChange={onFileChange}/>
+                                        {/* <div onClick={onFileUpload} className="btn">Upload</div> */}
+                                    </div>
+                                    <div className="upload">
+                                        <input type="file" onChange={onFileChange}/>
+                                        {/* <div onClick={onFileUpload} className="btn">Upload</div> */}
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div className="btn-submit">
-                        <div>Submit</div>
-                    </div>
+
+                    <Popup trigger=
+                    {<div className="btn-submit">Submit</div>}
+                    modal nested>
+                    {
+                        close => (
+                            <div className='modal'>
+                                <div className='content'>
+                                    <AiFillCheckCircle/>
+                                    <div className="fill">
+                                        <h1>Submission Recieved</h1>
+                                        <p>Check out other posts in the community</p>
+                                    </div>
+                                </div>
+                                <div className="cta">
+                                    <div className="cta-btn" onClick=
+                                        {() => navigate("/Connect")}>
+                                            Search Postings
+                                    </div>
+                                </div>
+                            </div>
+                        )
+                    }
+                </Popup>
                 </div>
             </div>
        </div>
