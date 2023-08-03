@@ -1,5 +1,6 @@
 import "./Post.scss";
 import {useNavigate} from "react-router-dom";
+import Posts from "./Posts/Posts";
 
 const Post = ({posts}) => {
     const navigate = useNavigate();
@@ -11,7 +12,7 @@ const Post = ({posts}) => {
             <div className="post-content">
                 
                 <div className="img-container">
-                    <img src={process.env.REACT_APP_DEV_URL + item.attributes.image.data[0].attributes.url} alt=""/>
+                    <img src={process.env.REACT_APP_DEV_URL + item.attributes.image.data[1].attributes.url} alt=""/>
                 </div>
                 
                
@@ -26,6 +27,14 @@ const Post = ({posts}) => {
             </div>
         </div>
         ))}
+
+        {/* {posts?.data?.map(item => (
+            <Posts 
+                key={item.id} 
+                id={item.id} 
+                data={item.attributes}
+            />
+        ))} */}
         </div>
     );
 };

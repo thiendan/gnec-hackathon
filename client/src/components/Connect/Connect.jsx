@@ -1,4 +1,4 @@
-import {useNavigate} from "react-router-dom";
+import {useNavigate, useParams} from "react-router-dom";
 import { useState, useContext, useEffect } from "react";
 import Select from 'react-select';
 import "./Connect.scss";
@@ -6,18 +6,66 @@ import Post from "./Post/Post";
 
 import { Context } from "../../utils/context";
 import { fetchDataFromApi } from "../../utils/api";
+import useFetch from "../../hooks/useFetch";
+
 
 import { HiMiniMagnifyingGlass } from "react-icons/hi2";
 
 const Connect = () => {
-    const [posts, setPosts] = useState();
+    const {posts, setPosts} = useContext(Context);
+    const {categories, setCategories} = useContext(Context);
+    const [trade] = useState("");
     
-    // const [query, setQuery] = useState("");
+    const [query, setQuery] = useState("");
+    const [searchQuery, setSearchQuery] = useState("");
     // // const navigate = useNavigate();
 
-    // const onChange = (e) => {
-    //     setQuery(e.target.value);
-    // };
+    const onChange = (e) => {
+        setQuery(e.target.value);
+    };
+
+    const onChangeLoc = (e1) => {
+        setSearchQuery(e1.target.value);
+    };
+
+    let {data} = useFetch(`/api/posts?populate=*&filters[title][$contains]=${query}`);
+
+    let {dataCat} = useFetch(`/api/posts?populate=*&filters[category][$contains]=${trade}`);
+
+    let {searchData} = useFetch(`/api/posts?populate=*&filters[title][$contains]=${query}&filters[location][$contains]=${searchQuery}`);
+
+    let {searchDataOnly} = useFetch(`/api/posts?populate=*&filters[location][$contains]=${searchQuery}`);
+
+    if (!query.length && !searchQuery.length) {
+        data = posts;
+    }
+
+    if (searchQuery.length){
+        data = searchDataOnly;
+    }
+
+    // if (query.length && searchQuery.length){
+    //     data = searchData;
+    // }
+
+    useEffect(() => {
+        getPosts();
+        getCategories();
+    }, [])
+
+    const getPosts = () => {
+        fetchDataFromApi("/api/posts?populate=*").then((res) => {
+            console.log(res);
+            setPosts(res);
+        });
+    };
+
+    const getCategories= () => {
+        fetchDataFromApi("/api/categories?populate=*").then((res) => {
+            console.log(res);
+            setCategories(res);
+        });
+    };
 
     const option = [
         { value: 'Accountant', label: 'Accountant' },
@@ -30,17 +78,6 @@ const Connect = () => {
         { value: 'Other', label: 'Other' }
     ]
 
-    useEffect(() => {
-        getPosts();
-    }, [])
-
-    const getPosts = () => {
-        fetchDataFromApi("/api/posts?populate=*").then((res) => {
-            console.log(res);
-            setPosts(res);
-        });
-    };
-
     return (
         <div className="main-container">
 
@@ -51,8 +88,8 @@ const Connect = () => {
                         type="text"
                         autoFocus
                         placeholder="Search the network"
-                        // value={query}
-                        // onChange={onChange}
+                        value={query}
+                        onChange={onChange}
                     />
                 </div>
             </div>
@@ -67,6 +104,7 @@ const Connect = () => {
                                 maxMenuHeight={220}
                                 menuPlacement="auto"
                                 options={option}
+                                // value={trade}
                             />
                         </div>
                         <div className="subsection">
@@ -75,6 +113,8 @@ const Connect = () => {
                                 <input 
                                     type="text"
                                     placeholder="Location"
+                                    value={searchQuery}
+                                    onChange={onChangeLoc}
                                 />
                             </div>
                         </div>
@@ -83,7 +123,7 @@ const Connect = () => {
 
                 <div className="search-results">
                     <div className="results">
-                        <Post posts={posts}/>
+                        <Post posts={data}/>
                     </div>
                 </div> 
 

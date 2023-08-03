@@ -1,25 +1,25 @@
 import {useNavigate} from "react-router-dom";
 import { useContext } from "react";
 
-import bckd from "../../assets/register.jpg";
+import bckd from "../../../assets/register.jpg";
 import { FcGoogle } from "react-icons/fc";
 
-import "./Register.scss";
-import { Context } from "../../utils/context";
+import "./Login.scss";
+import { Context } from "../../../utils/context";
 
-const Register = () => {
+const Login = () => {
     const {visited, setVisited} = useContext(Context);
     const navigate = useNavigate();
 
     return (
         <div className="container-reg">
             <div className="content">
-                <div className="box">
+                <div className="login-box">
                     <div className="register-info">
 
                         <div className="signIn">
-                                <h1 className="title-h1">Welcome</h1>
-                                <p className="small-text">Welcome to the community! Please enter your details.</p>
+                                <h1 className="title-h1">Welcome back</h1>
+                                <p className="small-text">Welcome back! Please enter your details.</p>
                                 <div className="cta">
                                     <p>Email</p>
                                     <div className="input-section">
@@ -52,7 +52,7 @@ const Register = () => {
                                     setVisited(true)
                                     navigate("/Connect")
                                 }}>
-                                    <p>Sign Up</p>
+                                    <p>Sign In</p>
                                 </div>
 
                                 <div className="divider">
@@ -71,8 +71,8 @@ const Register = () => {
                                 </div>
 
                                 <div className="bottom-options">
-                                    <p>Already have an account?</p>
-                                    <p className="v1" onClick={()=>navigate("/Login")}>Sign in</p>
+                                    <p> Don't have an account?</p>
+                                    <p className="v1" onClick={()=>navigate("/Register")}>Sign up</p>
                                 </div>
                         </div>
                     </div>
@@ -86,4 +86,4 @@ const Register = () => {
     );
 };
 
-export default Register;
+export default Login;

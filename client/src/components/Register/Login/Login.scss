@@ -1,4 +1,4 @@
-@import "../../css-config/mixins.scss";
+@import "../../../css-config/mixins.scss";
 
 .container-reg {
     position: relative;
@@ -14,7 +14,7 @@
         flex-direction: row;
         // justify-content: center;
         // padding: 150px 0;
-        .box {
+        .login-box {
             width: 800px;
             .register-info{
                 display: flex;

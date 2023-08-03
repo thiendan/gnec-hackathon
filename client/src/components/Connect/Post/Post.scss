@@ -18,6 +18,7 @@
             }
         }
         .details {
+            overflow: hidden;
             .title {
                 display: flex;
                 justify-content: space-between;
@@ -35,6 +36,11 @@
             }
             .desc {
                 font-size: 15px;
+                line-height: 1;
+                display: block;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                white-space: nowrap;
             }
         }
     }

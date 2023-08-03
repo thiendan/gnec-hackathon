@@ -7,19 +7,24 @@ import CreatePost from "./components/CreatePost/CreatePost";
 import Register from "./components/Register/Register";
 import Post from "./components/SinglePost/SinglePost";
 import About from "./components/About/About";
+import Login from "./components/Register/Login/Login";
+import AppContext from "./utils/context";
 
 function App() {
   return (
     <BrowserRouter>
-      <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/About" element={<About />} />
-        <Route path="/Connect" element={<Connect />} />
-        <Route path="/CreatePost" element={<CreatePost />} />
-        <Route path="/Register" element={<Register />} />
-        <Route path="/post/:id" element={<Post />} />
-      </Routes>
+    <AppContext>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/About" element={<About />} />
+          <Route path="/Connect" element={<Connect />} />
+          <Route path="/CreatePost" element={<CreatePost />} />
+          <Route path="/Register" element={<Register />} />
+          <Route path="/Login" element={<Login />} />
+          <Route path="/post/:id" element={<Post />} />
+        </Routes>
+      </AppContext>
     </BrowserRouter>
   );
 }
