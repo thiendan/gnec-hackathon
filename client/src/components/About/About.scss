@@ -1,2 +1,129 @@
 @import "../../css-config/mixins.scss";
 
+.main-content-abt {
+    padding: 20px 0;
+    position: relative;
+    background-color: white;
+    height: 100%;
+    .abt-content {
+        height: 100%;
+        flex-direction: row;
+        margin: 0;
+        // max-width: 1200px;
+        .title-banner {
+            display: flex;
+            flex-direction: row;
+            padding: 0;
+            margin: 0;
+            height: calc(100vh - 100px);
+            .section-title-abt {
+                width: 900px;
+                bottom: 0;
+                left: 0;
+                padding: 500px 0 0 80px;
+                p {
+                    font-size: 20px;
+                }
+                h1 {
+                    font-size: 30px;
+                    background: linear-gradient(to bottom right, #137DC5, #137DC5);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                }
+            }
+            .section-img {
+                justify-content: flex-end;
+                right: 0;
+                padding: 0;
+                margin: 0;
+                img {
+                    width: 620px;
+                    height: calc(100vh - 100px);
+                }
+            }
+        }
+        .first-sec {
+            display: flex;
+            justify-content: center;
+            padding: 30px 0;
+            p {
+                font-size: 25px;
+                color: #797979;
+                font-style: italic;
+            }
+        }
+        .sections {
+            padding: 0 40px;
+            .title-abt {
+                h1 {
+                    font-size: 35px;
+                    font-weight: 600;
+                    color: #0f5f96;
+                }
+            }
+            .body-sec {
+                .body {
+                    font-size: 18px;
+                }
+                .goals-sec {
+                    display: flex;
+                    flex-direction: row;
+                    .goal-desc {
+                        padding: 10px 20px;
+                        .goal-title {
+                            font-size: 18px;
+                            font-weight: 600;
+                            padding-top: 50px
+                        }
+                        .goal-desc {
+                            font-style: italic;
+                        }
+                    }
+                    .img-sec {
+                        img {
+                            width: 300px;
+                        }
+                    }
+                }
+                .plan-sec {
+                    display: flex;
+                    .body {
+                        width: 1800px;
+                        .body-desc {
+                            padding-top: 100px;
+                        }
+                        .body-quote {
+                            padding-left: 200px;
+                            padding-top: 80px;
+                            font-size: 55px;
+                            font-weight: 200;
+                            color: #797979;
+                            font-style: italic;
+                        }
+                    }
+                    .img-sec {
+                        padding: 0;
+                        margin: 0;
+                        width: 400px;
+                        img {
+                            padding: 0;
+                            margin: 0;
+                            width: 500px;
+                        }
+                    }
+                    .img-sec2 {
+                        padding: 0;
+                        padding-left: 0;
+                        margin: 0;
+                        width: 600px;
+                        img {
+                            padding: 0;
+                            margin: 0;
+                            width: 600px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

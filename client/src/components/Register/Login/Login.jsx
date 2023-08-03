@@ -50,7 +50,7 @@ const Login = () => {
 
                                 <div className="sign-in-btn" onClick={()=> {
                                     setVisited(true)
-                                    navigate("/Connect")
+                                    navigate("/CreatePost")
                                 }}>
                                     <p>Sign In</p>
                                 </div>

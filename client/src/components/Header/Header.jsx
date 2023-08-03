@@ -16,7 +16,7 @@ const Header = () => {
                 <ul className="left">
                     <li onClick={()=> navigate("/")}>Home</li>
                     <li onClick={()=> navigate("/Connect")}>Connect</li>
-                    <li onClick={()=> navigate("/CreatePost")}>Create Post</li>
+                    {visited && <li onClick={()=> navigate("/CreatePost")}>Create Post</li>}
                 </ul>
             
                 <div className="center" onClick={()=> navigate("/")}>
