@@ -78,20 +78,22 @@ const About = () => {
                                 <img src={img2} alt=""/>
                             </div>
                         </div>
+                        
                         <div className="plan-sec">
-                            <div className="img-sec2">
-                                <img src={img3} alt=""/>
-                            </div>
-                            <div className="body">
-                                <p className="body-quote">"It's Uber for the trades"</p>
-                            </div>
-                        </div>
-                        <div className="plan-sec">
-                            <div className="body">
-                                <p className="body-desc">A platform where community members can request assistance with household repairs and where companies can find manual labour contractors.</p>
-                            </div>
                             <div className="img-sec">
                                 <img src={img4} alt=""/>
+                            </div>
+                            <div className="body">
+                                <p className="body-desc2">A platform where community members can request assistance with household repairs and where companies can find manual labour contractors.</p>
+                            </div>
+                            
+                        </div>
+                        <div className="plan-sec">
+                            {/* <div className="img-sec2">
+                                <img src={img3} alt=""/>
+                            </div> */}
+                            <div className="body-q">
+                                <p className="body-quote">"It's Uber for the trades"</p>
                             </div>
                         </div>
                     </div>
